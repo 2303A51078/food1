@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Cart</title></head>
+<body>
+  <h2>Your Cart</h2>
+  <ul id="list"></ul>
+  <button onclick="checkout()">Checkout</button>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")||"[]");
+    document.getElementById("list").innerHTML = cart.map(i=>"<li>"+i+"</li>").join("");
+    function checkout(){
+      alert("Order placed!");
+      localStorage.removeItem("cart");
+      window.location="browse.html";
+    }
+  </script>
+</body>
+</html>
