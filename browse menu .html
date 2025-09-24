@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Browse</title></head>
+<body>
+  <h2>Browse Menu</h2>
+  <div>
+    <p>Burger - $5 <button onclick="add('Burger')">Add</button></p>
+    <p>Pizza - $8 <button onclick="add('Pizza')">Add</button></p>
+    <p>Fries - $3 <button onclick="add('Fries')">Add</button></p>
+  </div>
+  <a href="cart.html">Go to Cart</a>
+
+  <script>
+    function add(item){
+      let cart = JSON.parse(localStorage.getItem("cart")||"[]");
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(item+" added!");
+    }
+  </script>
+</body>
+</html>
